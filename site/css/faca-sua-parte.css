@@ -19,6 +19,32 @@ body {
   font-family: 'roboto';
 }
 
+/* --------------------------------------------- Barra de Rolagem ---------------------------------------------------- */
+/* width */
+body::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  width: 0.8rem;
+  background-color: #fff4c2;
+  border-left: 1px solid #755026;
+  justify-content: space-between;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 0.3em;
+  background-color: #c0cb02;
+  border: 2px solid #191919;
+  box-shadow: 0 0 10px rgba(192, 203, 2, 0.3), 0 0 20px rgba(192, 203, 2, 0.3);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------- */
 /* Estilo do Header */
 .header {
   position: fixed;
@@ -360,14 +386,7 @@ body {
 /* Define a posição e o tamanho dos ícones */
 .form-group i.name,
 .form-group i.email,
-.form-group i.phone,
-.form-group i.cep,
-.form-group i.address,
-.form-group i.number,
-.form-group i.complement,
-.form-group i.neighborhood,
-.form-group i.state,
-.form-group i.city {
+.form-group i.phone {
   left: 0;
   font-size: 15px;
 }
@@ -378,139 +397,6 @@ textarea::placeholder {
   color: #fff4c2;
   font-weight: bold;
   padding-left: 10px;
-}
-
-/* ---------------------------------------------- Dropdown dos Estados ----------------------------------------------- */
-/* Estilo do Botão */
-.dropdown button {
-  background-color: transparent;
-  font-weight: bold;
-  color: #fff4c2;
-  box-shadow: rgba(192, 203, 2, 0.3) 0 -25px 18px -14px inset, rgba(192, 203, 2, 0.25) 0 1px 2px, rgba(192, 203, 2, 0.25) 0 2px 4px,
-    rgba(192, 203, 2, 0.25) 0 4px 8px, rgba(192, 203, 2, 0.25) 0 8px 16px, rgba(192, 203, 2, 0.25) 0 16px 32px;
-  outline: none;
-  border: 1.5px solid #c0cb02;
-  border-radius: 0.3em;
-  transition: all 0.2s ease-in-out;
-}
-
-/* Hover do Botão */
-.dropdown button:hover {
-  background-color: rgba(192, 203, 2, 0.3);
-  border: 1.5px solid #c0cb02;
-}
-
-/* Focus do Botão */
-.dropdown button:focus {
-  color: #fff4c2;
-  background-color: rgba(33, 37, 41, 0.3);
-  box-shadow: #000000 0 0px 7px inset;
-  border: 1.5px solid #c0cb02;
-}
-
-/* Focus do Botão */
-.dropdown-btn:active {
-  background-color: rgba(33, 37, 41, 0.3);
-  color: #c0cb02;
-  text-shadow: none;
-  box-shadow: #000000 0 0px 7px inset;
-  border: 1.5px solid #c0cb02;
-}
-
-/* Estilo e Posição dos Ícones */
-.dropdown i {
-  color: #fff4c2;
-  top: 35px;
-  left: 0;
-  font-size: 15px;
-  padding: 0 2% 0 2%;
-  position: absolute;
-  transform: translateY(-20%);
-}
-@media screen and (max-width: 1000px) {
-  .dropdown i {
-    transform: translatex(20%);
-  }
-}
-
-.dropdown-toggle:focus {
-  box-shadow: #000000 0 0px 7px inset;
-}
-
-/* Estilo do Dropdown */
-.dropdown-menu {
-  background-color: rgba(192, 203, 2, 0.5);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px);
-  text-shadow: -1.5px 0 #191919, 0 1.5px #191919, 1.5px 0 #191919, 0 -1.5px #191919;
-  width: 100%;
-  border: 1.5px solid #c0cb02;
-  max-height: 200px;
-  overflow-y: auto;
-  box-shadow: #000000 0 0px 7px inset;
-}
-
-.dropdown-menu::-webkit-scrollbar {
-  width: 0.8rem;
-  border-radius: 0.3em;
-  background-color: #000000;
-}
-
-.dropdown-menu::-webkit-scrollbar-thumb {
-  border-radius: 0.3em;
-  background-color: #c0cb02;
-  border: 2px solid #191919;
-  box-shadow: 0 0 10px rgba(192, 203, 2, 0.3), 0 0 20px rgba(192, 203, 2, 0.3);
-}
-
-/* Hover do Dropdown */
-.dropdown-menu:hover {
-  box-shadow: #000000 0 0px 7px inset;
-}
-
-.dropdown-menu:focus {
-  box-shadow: #000000 0 0px 7px inset;
-  background-color: rgba(33, 37, 41, 0.3);
-  box-shadow: #000000 0 0px 7px inset;
-}
-
-/* Nomes da Lista do Dropdown */
-.dropdown-menu a {
-  font-weight: bolder;
-  color: #000000;
-  text-shadow: -1.5px 0 #c0cb02, 0 1.5px #c0cb02, 1.5px 0 #c0cb02, 0 -1.5px #c0cb02;
-}
-
-/* Hover dos Nomes da Lista do Dropdown */
-.dropdown-menu a:hover,
-.dropdown-menu a:focus {
-  background-color: #191919;
-  color: #fff4c2;
-  font-weight: bold;
-  text-shadow: none;
-  box-shadow: #c0cb02 0 0px 7px inset;
-}
-
-/* Estilo e posição do tamanho do ícone */
-.btn-secondary i {
-  left: 94%;
-  font-size: 20px;
-  cursor: pointer;
-  transform: translateY(150%);
-  top: -55%;
-}
-@media screen and (max-width: 1000px) {
-  .btn-secondary i {
-    top: 30%;
-    transform: translateY(-20%);
-    transform: translatex(-35%);
-  }
-}
-
-#dropdown-btn {
-  text-align: left;
-  padding-left: 50px;
-  white-space: nowrap;
 }
 
 /* ----------------------------------------------- Caixa de Mensagem ------------------------------------------------- */
@@ -593,7 +479,8 @@ textarea::placeholder {
   color: #fff4c2;
   font-weight: bolder;
   text-shadow: 0 0 1px rgba(255, 83, 30, 0.5), 0 0 2px rgba(255, 83, 30, 0.5), 0 0 3px rgba(255, 83, 30, 0.5), 0 0 4px rgba(255, 83, 30, 0.5),
-    0 0 5px rgba(255, 83, 30, 0.5), 0 0 10px rgba(255, 83, 30, 0.5), 0 0 15px rgba(255, 83, 30, 0.5), 0 0 20px rgba(255, 83, 30, 0.5), 0 0 100px rgba(255, 83, 30, 0.5);
+    0 0 5px rgba(255, 83, 30, 0.5), 0 0 10px rgba(255, 83, 30, 0.5), 0 0 15px rgba(255, 83, 30, 0.5), 0 0 20px rgba(255, 83, 30, 0.5),
+    0 0 100px rgba(255, 83, 30, 0.5);
   margin-top: 30px;
   width: 100%;
   padding: 10px 0;
@@ -707,7 +594,9 @@ textarea::placeholder {
 /* Define a posição e o tamanho dos ícones de e-mail e senha */
 .login_form .form-group i.email,
 .login_form .form-group i.password,
+.signup_form .form-group i.name,
 .signup_form .form-group i.email,
+.signup_form .form-group i.phone,
 .signup_form .form-group i.password {
   left: 15px;
   font-size: 15px;
@@ -981,13 +870,158 @@ textarea::placeholder {
 .volun_container::-webkit-scrollbar {
   width: 0.8rem;
   border-radius: 0.3em;
-  background-color: #000000;
+  background-color: #fff4c2;
 }
 .volun_container::-webkit-scrollbar-thumb {
   border-radius: 0.3em;
   background-color: #c0cb02;
   border: 2px solid #191919;
   box-shadow: 0 0 10px rgba(192, 203, 2, 0.3), 0 0 20px rgba(192, 203, 2, 0.3);
+}
+
+/* Define a posição e o tamanho dos ícones */
+.form-group i.cep,
+.form-group i.address,
+.form-group i.number,
+.form-group i.complement,
+.form-group i.neighborhood,
+.form-group i.state,
+.form-group i.city {
+  left: 0;
+  font-size: 15px;
+}
+
+/* ---------------------------------------------- Dropdown dos Estados ----------------------------------------------- */
+/* Estilo do Botão */
+.dropdown button {
+  background-color: transparent;
+  font-weight: bold;
+  color: #fff4c2;
+  box-shadow: rgba(192, 203, 2, 0.3) 0 -25px 18px -14px inset, rgba(192, 203, 2, 0.25) 0 1px 2px, rgba(192, 203, 2, 0.25) 0 2px 4px,
+    rgba(192, 203, 2, 0.25) 0 4px 8px, rgba(192, 203, 2, 0.25) 0 8px 16px, rgba(192, 203, 2, 0.25) 0 16px 32px;
+  outline: none;
+  border: 1.5px solid #c0cb02;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover do Botão */
+.dropdown button:hover {
+  background-color: rgba(192, 203, 2, 0.3);
+  border: 1.5px solid #c0cb02;
+}
+
+/* Focus do Botão */
+.dropdown button:focus {
+  color: #fff4c2;
+  background-color: rgba(33, 37, 41, 0.3);
+  box-shadow: #000000 0 0px 7px inset;
+  border: 1.5px solid #c0cb02;
+}
+
+/* Focus do Botão */
+.dropdown-btn:active {
+  background-color: rgba(33, 37, 41, 0.3);
+  color: #c0cb02;
+  text-shadow: none;
+  box-shadow: #000000 0 0px 7px inset;
+  border: 1.5px solid #c0cb02;
+}
+
+/* Estilo e Posição dos Ícones */
+.dropdown i {
+  color: #fff4c2;
+  top: 35px;
+  left: 0;
+  font-size: 15px;
+  padding: 0 2% 0 2%;
+  position: absolute;
+  transform: translateY(-20%);
+}
+@media screen and (max-width: 1000px) {
+  .dropdown i {
+    transform: translatex(20%);
+  }
+}
+
+.dropdown-toggle:focus {
+  box-shadow: #000000 0 0px 7px inset;
+}
+
+/* Estilo do Dropdown */
+.dropdown-menu {
+  background-color: rgba(192, 203, 2, 0.5);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px);
+  text-shadow: -1.5px 0 #191919, 0 1.5px #191919, 1.5px 0 #191919, 0 -1.5px #191919;
+  width: 100%;
+  border: 1.5px solid #c0cb02;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: #000000 0 0px 7px inset;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+  width: 0.8rem;
+  border-radius: 0.3em;
+  background-color: #000000;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  border-radius: 0.3em;
+  background-color: #c0cb02;
+  border: 2px solid #191919;
+  box-shadow: 0 0 10px rgba(192, 203, 2, 0.3), 0 0 20px rgba(192, 203, 2, 0.3);
+}
+
+/* Hover do Dropdown */
+.dropdown-menu:hover {
+  box-shadow: #000000 0 0px 7px inset;
+}
+
+.dropdown-menu:focus {
+  box-shadow: #000000 0 0px 7px inset;
+  background-color: rgba(33, 37, 41, 0.3);
+  box-shadow: #000000 0 0px 7px inset;
+}
+
+/* Nomes da Lista do Dropdown */
+.dropdown-menu a {
+  font-weight: bolder;
+  color: #000000;
+  text-shadow: -1.5px 0 #c0cb02, 0 1.5px #c0cb02, 1.5px 0 #c0cb02, 0 -1.5px #c0cb02;
+}
+
+/* Hover dos Nomes da Lista do Dropdown */
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+  background-color: #191919;
+  color: #fff4c2;
+  font-weight: bold;
+  text-shadow: none;
+  box-shadow: #c0cb02 0 0px 7px inset;
+}
+
+/* Estilo e posição do tamanho do ícone */
+.btn-secondary i {
+  left: 94%;
+  font-size: 20px;
+  cursor: pointer;
+  transform: translateY(150%);
+  top: -55%;
+}
+@media screen and (max-width: 1000px) {
+  .btn-secondary i {
+    top: 30%;
+    transform: translateY(-20%);
+    transform: translatex(-35%);
+  }
+}
+
+#dropdown-btn {
+  text-align: left;
+  padding-left: 50px;
+  white-space: nowrap;
 }
 
 /* --------------------------------------------- QR Code para donativos ---------------------------------------------- */
@@ -1270,7 +1304,9 @@ ol li:before {
   background-color: rgba(192, 203, 2, 0.3);
   color: #fff4c2;
   font-weight: bolder;
-  text-shadow: 0 0 1px rgba(255, 83, 30, 0.5), 0 0 2px rgba(255, 83, 30, 0.5), 0 0 3px rgba(255, 83, 30, 0.5), 0 0 4px rgba(255, 83, 30, 0.5), 0 0 5px rgba(255, 83, 30, 0.5), 0 0 10px rgba(255, 83, 30, 0.5), 0 0 15px rgba(255, 83, 30, 0.5), 0 0 20px rgba(255, 83, 30, 0.5), 0 0 100px rgba(255, 83, 30, 0.5);
+  text-shadow: 0 0 1px rgba(255, 83, 30, 0.5), 0 0 2px rgba(255, 83, 30, 0.5), 0 0 3px rgba(255, 83, 30, 0.5), 0 0 4px rgba(255, 83, 30, 0.5),
+    0 0 5px rgba(255, 83, 30, 0.5), 0 0 10px rgba(255, 83, 30, 0.5), 0 0 15px rgba(255, 83, 30, 0.5), 0 0 20px rgba(255, 83, 30, 0.5),
+    0 0 100px rgba(255, 83, 30, 0.5);
   margin-top: 30px;
   width: 100%;
   padding: 10px 0;
